@@ -33,7 +33,7 @@ int main(void)
 
 	else
 	{
-		printf("%s,\n", " and is less than 6 and not 0");
+		printf("%s\n", " and is less than 6 and not 0");
 	}
 	return (0);
 
