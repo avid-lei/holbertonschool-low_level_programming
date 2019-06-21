@@ -17,7 +17,7 @@ for (number3 = '0'; number3 <= '9'; number3++)
 {
 	for (number0 = '0'; number0 <= '9'; number0++)
 	{
-		for (number1 = '0'; number1 <= '9'; number1++)
+		for (number1 = number3; number1 <= '9'; number1++)
 		{
 
 			for (number2 = number0 + 1; number2 <= '9'; number2++)
