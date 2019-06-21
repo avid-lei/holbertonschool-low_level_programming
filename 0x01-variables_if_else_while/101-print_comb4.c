@@ -14,14 +14,15 @@ int number0;
 
 for (number0 = '0'; number0 <= '7'; number0++)
 {
-	for (number1 = '1'; number1 <= '9'; number1++)
+	for (number1 = number0 + 1; number1 <= '9'; number1++)
 	{
+
 		for (number2 = number1 + 1; number2 <= '9'; number2++)
 		{
 		putchar(number0);
 		putchar(number1);
 		putchar(number2);
-		if (number1 < '8' || number2 < '9')
+		if (number0 < '7' || number1 < '8' || number2 < '9')
 		{
 		putchar(',');
 		putchar(' ');
