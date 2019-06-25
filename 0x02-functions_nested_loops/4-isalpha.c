@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
-* main - Entry point
-*
-* Return: Always 0 (Success)
+* _isalpha - checks c for alphabet character
+* @c : int
+* Return: 1 if lowercase, 0 if upper
 */
 
 int _isalpha(int c)
