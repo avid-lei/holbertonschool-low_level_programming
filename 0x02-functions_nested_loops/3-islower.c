@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* _islower - Entry point
+* _islower - checks for lowercase letters
 *
 * Return: Always 0 (Success)
 */
