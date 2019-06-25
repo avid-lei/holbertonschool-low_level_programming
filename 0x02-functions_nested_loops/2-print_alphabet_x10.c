@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
 * print alphabet 10x- Entry point
@@ -16,10 +16,10 @@ for (x = 1; x <= 10; x++)
 {
 	for (alpha = 'a'; alpha <= 'z'; alpha++)
 	{
-		putchar(alpha);
+		_putchar(alpha);
 	}
 
-	putchar('\n');
+	_putchar('\n');
 }
 
 return;
