@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
-* main - Entry point
-*
-* Return: Always 0 (Success)
+* print_sign - prints the sign of n
+* @n : int
+* Return: 1 if positive, 0 is 0, -1 is negative
 */
 
 int print_sign(int n)
