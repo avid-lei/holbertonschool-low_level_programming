@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* print alphabet 10x- Entry point
+* print_alphabet_x10 - prints alphabet 10 times lowercase
 *
 * Return: Always 0 (Success)
 */
