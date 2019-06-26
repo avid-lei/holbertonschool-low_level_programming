@@ -8,13 +8,13 @@
 int main(void)
 {
 int x;
-double sum;
+double sum = 0;
 double num1 = 1;
 double num2 = 2;
 
 printf("%.f", num1);
 printf(", %.f", num2);
-for (x = 0; x < 98; x++)
+for (x = 0; x < 96; x++)
 {
 	sum = num1 + num2;
 	num1 = num2;
