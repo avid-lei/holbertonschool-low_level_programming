@@ -32,9 +32,13 @@ for (factor1 = 0; factor1 <= n; factor1++)
 				_putchar(' ');
 				_putchar(' ');
 				_putchar(' ');
-	}}	product100 = product / 100;
+	}
+		}
+
+		product100 = product / 100;
 		product10 = (product / 10) % 10;
 		product1 = product % 10;
+
 		if (product100 != 0)
 		{
 			_putchar(product100 + 48);
@@ -44,4 +48,7 @@ for (factor1 = 0; factor1 <= n; factor1++)
 			_putchar(product10 + '0');
 		}
 			_putchar(product1 + '0');
-		} _putchar('\n'); }}}
+	} _putchar('\n');
+}
+}
+}
