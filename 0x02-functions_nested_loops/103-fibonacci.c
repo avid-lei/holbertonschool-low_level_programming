@@ -8,11 +8,12 @@
 int main(void)
 {
 int x;
-long int sum, totalsum;
+long int sum = 0;
+long int totalsum = 0;
 long int num1 = 1;
 long int num2 = 2;
 
-for (x = 0; x < 48; x++)
+for (x = 0; x < 41; x++)
 {
 
 	sum = num1 + num2;
