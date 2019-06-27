@@ -16,7 +16,7 @@ void more_numbers(void)
 			int tens, ones;
 
 			tens = num / 10;
-			ones = ones & 10;
+			ones = num % 10;
 
 		if (tens != 0)
 			_putchar (tens + '0');
