@@ -1,14 +1,16 @@
 #include "holberton.h"
 /**
- *mul - multiply 2 numbers
- *@a: int
- *@b: int
- *Return: product
- */ 
+ *print_numbers - print numbers 0-9
+ *
+ *Return:always 0
+ */
 
-int mul(int a, int b)
+void print_numbers(void)
 {
-int product;
-product = a * b; 
-return (product);
+int num;
+for (num = 0; num <= 9; num++)
+{
+	_putchar(num + '0');
+}
+	_putchar('\n');
 }
