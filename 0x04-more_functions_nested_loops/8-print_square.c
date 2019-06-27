@@ -17,5 +17,5 @@ for (length = 1; length <= size; length++)
 	_putchar('\n');
 }
 if (size < 0)
-	_putchar('n);
+	_putchar('n');
 }
