@@ -7,12 +7,12 @@
 
 int _isupper(int c)
 {
-char alpha; 
-for (alpha = 'A'; alpha <='Z'; alpha++)
+char alpha;
+for (alpha = 'A'; alpha <= 'Z'; alpha++)
 {
 	if (c == alpha)
 		return (1);
-}	
+}
 
 return (0);
 }
