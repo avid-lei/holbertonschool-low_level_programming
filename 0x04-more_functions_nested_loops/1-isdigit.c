@@ -12,6 +12,6 @@ for (digit = '0'; digit <= '9'; digit++)
 {
 	if (digit == c)
 		return (1);
-
+}
 return (0);
 }
