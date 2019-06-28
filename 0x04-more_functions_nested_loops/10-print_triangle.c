@@ -11,7 +11,7 @@ int times, x, y;
 
 for (times = size; times > 0; times--)
 {
-	for (x = 1 ; x <= times; x++)
+	for (x = 1 ; x < times; x++)
 	{	_putchar(' ');
 	}
 	for (y = size; y >= times; y--)
