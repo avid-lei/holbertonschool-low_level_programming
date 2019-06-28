@@ -20,7 +20,7 @@ for (num = 1; num <= 100; num++)
 	else if (num % 5 == 0)
 		printf(" Buzz");
 	else
-		printf("%d ", num);
+		printf(" %d", num);
 
 }
 	printf("\n");
