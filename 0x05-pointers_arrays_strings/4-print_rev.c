@@ -1,22 +1,23 @@
 #include "holberton.h"
 /**
- *print_rev = prints reverse
+ *print_rev - prints reverse
  *@s: char
  *Return: void
  */
 void print_rev(char *s)
 {
-	int count, x; 
+	int count, x;
+
 	while (*s != '\0')
 	{
-		count++; 
+		count++;
 		s++;
 
-	}	
-	_putchar(*s);
-	_putchar(count + '0');
-	for ( x = count; x <= 0; s--)
+	}
+
+	for (x = 0; x <= count; x++, s--)
 		_putchar(*s);
 
+	_putchar('\n');
 }
 
