@@ -4,14 +4,14 @@
  * @str: char
  * Return: always 0
  */
+
 void puts2(char *str)
 {
 
-	while (*str != '\0')
-	{
-		_putchar(*str);
-		str = str + 2;
-	}
-	_putchar('\n');
-}
+int index; 
 
+for (index = 0; index < _strlen(str); index += 2)
+{
+	_putchar(str[index]);
+}
+}
