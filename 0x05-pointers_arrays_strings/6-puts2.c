@@ -1,17 +1,25 @@
 #include "holberton.h"
+
 /**
- * puts2 - print every other character
- * @str: char
- * Return: always 0
+ *puts2 - prints every other char
+ *@str: char*
+ *Return: void
  */
 
 void puts2(char *str)
 {
+	int count = 0;
+	int x;
 
-int index; 
+	while (*str)
+	{
+		count++;
+		str++;
+	}
+	str = str - count;
 
-for (index = 0; index < _strlen(str); index += 2)
-{
-	_putchar(str[index]);
-}
+	for (x = 0; x < count; x += 2)
+	_putchar(str[x]);
+
+	_putchar('\n');
 }
