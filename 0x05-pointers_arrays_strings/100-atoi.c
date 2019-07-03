@@ -10,14 +10,15 @@ int _atoi(char *s)
 {
 	int negcounter = 0;
 	int number;
+
 	while (*s)
 	{
-		if ( *s == '-')
+		if (*s == '-')
 		{
 			negcounter++;
 			s++;
 		}
-		else if ( *s >= '0' && *s <= '9')
+		else if (*s >= '0' && *s <= '9')
 		{
 			number = *s - '0';
 			s++;
@@ -29,7 +30,7 @@ int _atoi(char *s)
 			if (negcounter % 2 == 1)
 				return (number * (-1));
 			else
-				return(number);
+				return (number);
 
 		}
 		else
