@@ -9,18 +9,12 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 char *tempd = dest;
-char *temps = src;
+
 int x;
-int length;
-
-while (*temps)
-{
-	length++;
-	temps++;
-}
 
 
-for (x = 0; x < length && x < n && *(tempd + x) ; x++)
+
+for (x = 0; x < n && *(src + x) ; x++)
 {
 	*(tempd + x) = *(src + x);
 }
