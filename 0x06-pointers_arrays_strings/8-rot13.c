@@ -20,15 +20,13 @@ while (*t)
 		if (*t == *(in + x))
 		{
 			*t = *(out + x);
-
+			break;
 
 		}
 
 	}
 	t++;
 }
-
-
 
 return (s);
 }
