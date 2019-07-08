@@ -20,9 +20,14 @@ char *cap_string(char *s)
 			for (check = 'a'; check <= 'z' ; check++)
 			{
 				if (*t == check)
-				*t = *t - 32;
+				{
+					*t = *t - 32;
+					t++;
+					break;
+				}
 			}
-			t++;
+
+
 		}
 
 		else
