@@ -15,5 +15,5 @@ while (*s)
 
 s++;
 }
-return ('\0');
+return (s);
 }
