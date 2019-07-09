@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- *cap_string
+ *cap_string- capitalize first lowercase letter after seperator
  *@s:char
  *Return: char
  */
