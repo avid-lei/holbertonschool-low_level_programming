@@ -1,39 +1,58 @@
 #include "holberton.h"
 /**
- *cap_string - capitalize letters in a string
- *@s: char
- *Return: char*
+ *cap_string
+ *@s:char
+ *Return: char
  */
 
 char *cap_string(char *s)
 {
 	char *t = s;
-	char check;
+	char *check = ",;.!?\"(){} \t\n";
+	int count = 0;
+	char alph;
+	char alphA;
+	int x;
 
 	while (*t)
 	{
-		if (*t == ' ' || *t == '\t' || *t == '\n' || *t == ',' || *t == ';' ||
-			*t == '.' || *t == '!' || *t == '?' || *t == '"' || *t == '(' ||
-			*t == ')' || *t == '{' || *t == '}')
-		{
-			t++;
-			for (check = 'a'; check <= 'z' ; check++)
+
+		for (x = 0; check[x] != '\0'; x++)
+
+			if (*t == check[x])
 			{
-				if (*t == check)
-				{
-					*t = *t - 32;
-					t++;
-					break;
-				}
+				count = 0;
+				break;
 			}
-
-
-		}
-
-		else
+		for (alph = 'a'; alph <= 'z'; alph++)
 		{
-			t++;
+			if (*t == alph)
+			{
+				count++;
+				break;
+			}
 		}
+
+
+		for (alphA = 'A'; alphA <= 'Z'; alphA++)
+		{
+			if (*t == alphA)
+			{
+				count++;
+				break;
+			}
+		}
+
+
+		if (count == 1 && (*t >= 'a' && *t <= 'z'))
+			*t = *t - 32;
+
+		t++;
+
+
 	}
+
+
+
 	return (s);
 }
