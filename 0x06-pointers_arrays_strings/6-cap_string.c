@@ -10,8 +10,6 @@ char *cap_string(char *s)
 	char *t = s;
 	char *check = ",;.!?\"(){} \t\n";
 	int count = 0;
-	char alph;
-	char alphA;
 	int x;
 
 	while (*t)
@@ -24,24 +22,15 @@ char *cap_string(char *s)
 				count = 0;
 				break;
 			}
-		for (alph = 'a'; alph <= 'z'; alph++)
-		{
-			if (*t == alph)
-			{
-				count++;
-				break;
-			}
-		}
 
+		if (*t >= 'a' && *t <= 'z')
+			count++;
 
-		for (alphA = 'A'; alphA <= 'Z'; alphA++)
-		{
-			if (*t == alphA)
-			{
-				count++;
-				break;
-			}
-		}
+		else if (*t >= 'A' && *t <= 'Z')
+			count++;
+
+		else if (*t >= '0' && *t <= '9')
+			count++;
 
 
 		if (count == 1 && (*t >= 'a' && *t <= 'z'))
