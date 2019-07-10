@@ -16,7 +16,7 @@ for (; *s; s++)
 		return (s);
 	}
 	if (*s == '\0')
-		return (s);
+		return (NULL);
 }
 return (NULL);
 
