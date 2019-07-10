@@ -33,9 +33,11 @@ while (*haystack)
 
 				if (count == length)
 					return (haystack - length);
-			{
-				count = 0;
-				break;
+				else
+				{
+					count = 0;
+					break;
+				}
 			}
 		}
 	}
