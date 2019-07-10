@@ -18,7 +18,6 @@ while (*needlecount)
 length++;
 needlecount++;
 }
-
 	while (*haystack)
 	{
 		if (*haystack == needle[0])
@@ -35,14 +34,16 @@ needlecount++;
 						return (haystack - (count - 1));
 					}
 					else
-					{
 						haystack++;
-					}
+				}
+				else
+				{	count = 0;
+					break;
 				}
 			}
 		}
-
+		else
 			haystack++;
 	}
-return (haystack);
+return (haystack - 3);
 }
