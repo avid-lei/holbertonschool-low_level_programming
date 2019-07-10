@@ -18,8 +18,8 @@ while (*neelength)
 	length++;
 	neelength++;
 }
-while (*haynull){
-	haynull++;}
+while (*haynull)
+	haynull++;
 while (*haystack)
 {
 	if (*haystack == needle[0])
