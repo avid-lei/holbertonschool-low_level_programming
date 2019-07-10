@@ -18,8 +18,7 @@ while (*neelength)
 }
 if (length == 0)
 	return (haystack);
-while (*haynull)
-	haynull++;
+
 while (*haystack)
 {
 	if (*haystack == needle[0])
@@ -45,5 +44,5 @@ while (*haystack)
 	else
 		haystack++;
 }
-return (haynull);
+return (NULL);
 }
