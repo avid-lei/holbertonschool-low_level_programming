@@ -33,6 +33,7 @@ while (*haystack)
 
 				if (count == length)
 					return (haystack - length);
+
 				else
 				{
 					count = 0;
@@ -44,5 +45,5 @@ while (*haystack)
 	else
 		haystack++;
 }
-return (haybegin);
+return (NULL);
 }
