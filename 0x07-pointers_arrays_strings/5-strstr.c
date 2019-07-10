@@ -43,5 +43,5 @@ while (*haystack)
 	else
 		haystack++;
 }
-return (NULL);
+return (haystack);
 }
