@@ -9,17 +9,15 @@ char *_strstr(char *haystack, char *needle)
 {
 char *neelength = needle;
 char *haynull = haystack;
-int length = 0;
-int count = 0;
-int ni;
+int length = 0, count = 0, ni;
 
 while (*neelength)
 {
 	length++;
 	neelength++;
 }
-if(length == 0)
-	return(haynull);
+if (length == 0)
+	return (haystack);
 while (*haynull)
 	haynull++;
 while (*haystack)
