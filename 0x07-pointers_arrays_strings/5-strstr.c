@@ -8,18 +8,21 @@
 char *_strstr(char *haystack, char *needle)
 {
 char *neelength = needle;
+char *haynull = haystack;
 int length = 0;
 int count = 0;
-int ni = 0;
+int ni;
 
 while (*neelength)
 {
 	length++;
 	neelength++;
 }
+while (*haynull)
+	haynull++;
 while (*haystack)
 {
-	if (*haystack == needle[ni])
+	if (*haystack == needle[0])
 	{
 		count++;
 		haystack++;
@@ -39,10 +42,8 @@ while (*haystack)
 			}
 		}
 	}
-	else if (needle[ni] = '\0')
-		return(haystack);
 	else
 		haystack++;
 }
-return ('\0');
+return (haynull);
 }
