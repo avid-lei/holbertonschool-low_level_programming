@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  *_strpbrk-searches string for set of bytes
  *@s: char
@@ -22,7 +23,7 @@ for (;; s++)
 
 	}
 }
-return (s);
+return (NULL);
 
 
 }
