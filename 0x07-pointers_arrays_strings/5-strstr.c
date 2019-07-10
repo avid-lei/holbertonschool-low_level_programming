@@ -45,5 +45,5 @@ needlecount++;
 		else
 			haystack++;
 	}
-return (haystack - 3);
+return (haystack);
 }
