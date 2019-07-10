@@ -18,6 +18,8 @@ while (*neelength)
 	length++;
 	neelength++;
 }
+if(length == 0)
+	return(haynull);
 while (*haynull)
 	haynull++;
 while (*haystack)
