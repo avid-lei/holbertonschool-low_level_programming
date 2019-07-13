@@ -12,7 +12,7 @@ char *str_concat(char *s1, char *s2)
 {
 unsigned int length1;
 unsigned int length2;
-unsigned int i, j;
+unsigned int i, j, k;
 char *ar;
 
 for (length1 = 0; s1[length1] != '\0'; length1++)
@@ -34,11 +34,11 @@ if (ar == NULL)
 	return (NULL);
 }
 
-for (i = 0; i < length1; i++)
+for (i = 0; s1[i] != '\0'; i++)
 	ar[i] = s1[i];
 
-for (j = i, i = 0; j < (length2 + length1); j++, i++)
-	ar[j] = s2[i];
+for (j = i, k = 0; s2[k] != '\0'; j++, k++)
+	ar[j] = s2[k];
 
 
 ar[j] = '\0';
