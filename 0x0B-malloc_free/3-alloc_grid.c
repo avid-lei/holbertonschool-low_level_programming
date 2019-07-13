@@ -42,4 +42,4 @@ for (y = 0; y < height; y++)
 		ar[y][j] = 0;
 }
 return (ar);
-
+}
