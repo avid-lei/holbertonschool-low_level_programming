@@ -37,12 +37,17 @@ for (i = 0; i < height; i++)
 
 		return (NULL);
 	}
+}
 
+for (i = 0; i < height; i++)
+{
 	for (j = 0; j < width; j++)
 	{
 		ar[i][j] = 0;
 	}
+
 }
+
 
 return (ar);
 
