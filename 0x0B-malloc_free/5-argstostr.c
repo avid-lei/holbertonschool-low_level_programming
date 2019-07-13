@@ -25,7 +25,7 @@ for (i = 0; i < ac; i++)
 	}
 	count++;
 }
-ar = (char *)malloc(count * sizeof(char));
+ar = (char *)malloc((count + 1) * sizeof(char));
 
 if (ar == NULL)
 {
