@@ -17,28 +17,28 @@ while (*strlength)
 strlength++;
 length++;
 }
+length++;
 
 if (str == NULL)
 	return (NULL);
 
-if (length < 1)
+else if (length < 1)
 	return (NULL);
 
 ar = malloc(length *sizeof(char));
 
 if (ar == NULL)
 {
+	free(ar);
 	return (NULL);
 }
 
 for (i = 0; i < length; i++)
-{
 	ar[i] = str[i];
-}
+
 ar[i] = '\0';
 
 return (ar);
-
 
 
 
