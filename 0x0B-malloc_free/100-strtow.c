@@ -23,7 +23,7 @@ char **strtow(char *str)
 	if (ar == NULL)
 	{
 		return (NULL);	}
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0' && word < wordcount; i++)
 	{
 		if (str[i] != ' ')
 		{
