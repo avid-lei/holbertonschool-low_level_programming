@@ -10,7 +10,7 @@ char *_strdup(char *str)
 
 char *strlength = str;
 char *ar;
-unsigned int i, length;
+unsigned int i, length = 0;
 
 while (*strlength)
 {
@@ -22,14 +22,13 @@ length++;
 if (str == NULL)
 	return (NULL);
 
-else if (length < 1)
+if (length < 1)
 	return (NULL);
 
 ar = malloc(length *sizeof(char));
 
 if (ar == NULL)
 {
-	free(ar);
 	return (NULL);
 }
 
