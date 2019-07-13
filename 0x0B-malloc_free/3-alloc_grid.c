@@ -39,9 +39,7 @@ for (i = 0; i < height; i++)
 for (y = 0; y < height; y++)
 {
 	for (j = 0; j < width; j++)
-	{
 		ar[y][j] = 0;
-	}
 }
 return (ar);
-}
+
