@@ -35,6 +35,7 @@ if (ar == NULL)
 
 }
 for (x = 0; x < count;)
+{
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++, x++)
@@ -44,6 +45,7 @@ for (x = 0; x < count;)
 		ar[x] = '\n';
 		x++;
 	}
-ar[x] = '\0';
+}
+
 return (ar);
 }
