@@ -8,19 +8,16 @@
 char *_strdup(char *str)
 {
 
-char *strlength = str;
 char *ar;
-unsigned int i, length = 0;
-
-while (*strlength)
-{
-strlength++;
-length++;
-}
-length++;
+unsigned int i;
+unsigned int length = 0;
 
 if (str == NULL)
 	return (NULL);
+
+for (length = 0; str[length] != '\0'; length++)
+;
+length++;
 
 if (length < 1)
 	return (NULL);
@@ -29,6 +26,7 @@ ar = malloc(length *sizeof(char));
 
 if (ar == NULL)
 {
+	free(ar);
 	return (NULL);
 }
 
