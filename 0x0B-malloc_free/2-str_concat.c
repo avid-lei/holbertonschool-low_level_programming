@@ -21,11 +21,10 @@ for (length2 = 0; s2[length2] != '\0'; length2++)
 ;
 length2++;
 
-if (s1 == NULL || s2 == NULL)
-	return (NULL);
-
-if (length1 == 0 || length2 == 0)
-	return (NULL);
+if (s1 == NULL)
+	s1 = "";
+if (s2 == NULL)
+	s2 = "";
 
 ar = malloc((length1 * sizeof(char)) + (length2 *sizeof(char)));
 
