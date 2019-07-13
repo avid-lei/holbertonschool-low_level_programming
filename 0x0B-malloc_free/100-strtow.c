@@ -7,7 +7,7 @@
 char **strtow(char *str)
 {
 	char **ar;
-	int i, j, wordcount = 0, k = 0, wordlength = 0, x, y;
+	int i, j, wordcount = 0, word = 0, wordlength = 0, letter, y;
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
@@ -23,26 +23,26 @@ char **strtow(char *str)
 	if (ar == NULL)
 	{
 		return (NULL);	}
-	for (i = 0; str[i] != '\0' &&  k < wordcount; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != ' ')
 		{
 			j = i;
 			wordlength = 0;
-			while (str[j] != '\0' && str[j] != ' ')
-				j++, wordlength++;
-			ar[k] = malloc((wordlength + 1) * sizeof(char));
-
-			if (ar[k] == NULL)
+			for (; str[j] != '\0' && str[j] != ' '; j++, wordlength++)
+			;
+			ar[word] = malloc((wordlength + 1) * sizeof(char));
+			if (ar[word] == NULL)
 			{
-				for (y = 0; y < k; y++)
-					free(ar[k]);
+				for (y = 0; y < word; y++)
+					free(ar[word]);
 				free(ar);
 				return (NULL);	}
-			for (x = 0; x < wordlength; x++, i++)
-				ar[k][x] = str[i];
-			ar[k++][x] = '\0';
+			for (letter = 0; letter < wordlength; letter++, i++)
+			{
+				ar[word][letter] = str[i];	}
+			ar[word][letter] = '\0';
+			word++;
 		}}
-	ar[k] = NULL;
-	return (ar);
-}
+	ar[word] = NULL;
+	return (ar); }
