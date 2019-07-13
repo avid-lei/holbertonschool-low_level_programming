@@ -18,12 +18,6 @@ if (width <= 0 || height <= 0)
 
 ar = malloc(height * sizeof(int));
 
-if (ar == NULL)
-{
-	free(ar);
-	return (NULL);
-}
-
 for (i = 0; i < height; i++)
 {
 	ar[i] = malloc(width * sizeof(int));
