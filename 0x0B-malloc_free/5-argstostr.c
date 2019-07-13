@@ -25,8 +25,8 @@ for (i = 0; i < ac; i++)
 	}
 	count++;
 }
-
-ar = malloc(count * sizeof(char));
+count++;
+ar = malloc(count *sizeof(char));
 
 if (ar == NULL)
 {
@@ -44,5 +44,6 @@ for (x = 0; x < count;)
 		ar[x] = '\n';
 		x++;
 	}
+ar[x] = '\0';
 return (ar);
 }
