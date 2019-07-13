@@ -1,4 +1,6 @@
 #include "holberton.h"
+#include <limits.h>
+#include <stdio.h>
 
 /**
   *alloc_grid - returns a pointer to 2D array
