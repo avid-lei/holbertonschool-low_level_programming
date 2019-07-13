@@ -7,7 +7,7 @@
 char **strtow(char *str)
 {
 	char **ar;
-	int i, j, wordcount = 0, k = 0, wordlength = 0, x;
+	int i, j, wordcount = 0, k = 0, wordlength = 0, x, y;
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
@@ -35,7 +35,7 @@ char **strtow(char *str)
 
 			if (ar[k] == NULL)
 			{
-				for (k = k - 1; k >= 0; k++)
+				for (y = 0; y < k; y++)
 					free(ar[k]);
 				free(ar);
 				return (NULL);	}
