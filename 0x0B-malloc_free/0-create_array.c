@@ -12,7 +12,7 @@ char *a;
 unsigned int i;
 
 if (size <= 0)
-	return(NULL);
+	return (NULL);
 else
 {
 	a = malloc(size * sizeof(char));
@@ -23,6 +23,6 @@ else
 for (i = 0; i < size; i++)
 	a[i] = c;
 
-return(a);
+return (a);
 
 }
