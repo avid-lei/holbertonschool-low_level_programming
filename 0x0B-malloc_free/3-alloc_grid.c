@@ -33,6 +33,8 @@ for (i = 0; i < height; i++)
 		for (k = 0; k < i; k++)
 			free(ar[k]);
 
+		free(ar);
+
 		return (NULL);
 	}
 
