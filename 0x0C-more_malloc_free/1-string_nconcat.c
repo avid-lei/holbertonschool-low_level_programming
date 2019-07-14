@@ -1,4 +1,6 @@
 #include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
  *string_nconcat- concats 2 strings
  *@s1: char
@@ -30,7 +32,6 @@ if (n < len2)
 	b = n + 1;
 else if (n >= len2)
 	b = len2 + 1;
-
 ar = malloc((len1 + b) * sizeof(char));
 	if (ar == NULL)
 	{
