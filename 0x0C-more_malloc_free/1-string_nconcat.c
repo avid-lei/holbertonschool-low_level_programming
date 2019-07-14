@@ -38,10 +38,10 @@ ar = malloc((len1 + b) * sizeof(char));
 for (x = 0; s1[x] != '\0'; x++)
 	ar[x] = s1[x];
 
-for (j = 0; j < b - 1; j++)
-	ar[x + j] = s2[j];
+for (j = 0; j < b - 1; j++, x++)
+	ar[x] = s2[j];
 
-ar[x + j] = '\0';
+ar[x] = '\0';
 
 return (ar);
 }
