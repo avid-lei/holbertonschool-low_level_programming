@@ -32,7 +32,7 @@ if (n < len2)
 	b = n + 1;
 else if (n >= len2)
 	b = len2 + 1;
-ar = malloc((len1 + b) * sizeof(char));
+ar = malloc(sizeof(char) * (b + len1));
 	if (ar == NULL)
 	{
 		free(ar);
