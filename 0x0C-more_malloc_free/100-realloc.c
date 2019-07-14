@@ -30,8 +30,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		ar = malloc(new_size);
 
 		if (ar == NULL)
+		{
+			free(ar);
 			return (NULL);
-
+		}
 		for (x = 0; x < old_size; x++)
 			ar[x] = r[x];
 
