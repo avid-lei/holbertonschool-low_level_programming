@@ -31,7 +31,7 @@ if (n < len2)
 else if (n >= len2)
 	b = len2 + 1;
 
-ar = malloc((len1 + b + 1) * sizeof(char));
+ar = malloc((len1 + b) * sizeof(char));
 	if (ar == NULL)
 		return (NULL);
 
