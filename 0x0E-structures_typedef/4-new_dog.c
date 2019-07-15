@@ -19,19 +19,17 @@ if (name == NULL && owner == NULL)
 	return (NULL);
 
 doginfo = malloc(sizeof(dog_t));
-
 if (doginfo == NULL)
 	return (doginfo);
-
 for (nl = 0; name[nl] != '\0'; nl++)
 ;
 for (ol = 0; owner[ol] != '\0'; ol++)
 ;
 (*doginfo).name = malloc((sizeof(char) * nl) + 1);
-
 if ((*doginfo).name == NULL)
 {
 	free((*doginfo).name);
+	free(doginfo);
 	return (NULL);
 }
 (*doginfo).owner = malloc((sizeof(char) * ol) + 1);
@@ -39,13 +37,13 @@ if ((*doginfo).name == NULL)
 if ((*doginfo).owner == NULL)
 {
 	free((*doginfo).owner);
+	free(doginfo);
 	return (NULL);
 }
 for (x = 0; x <= nl; x++)
 	(*doginfo).name[x] = name[x];
 
 (*doginfo).age = age;
-
 for (x = 0; x <= ol; x++)
 	(*doginfo).owner[x] = owner[x];
 return (doginfo);
