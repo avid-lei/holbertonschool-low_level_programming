@@ -36,13 +36,13 @@ if ((*doginfo).name == NULL)
 
 if ((*doginfo).owner == NULL)
 {
+	free((*doginfo).name);
 	free((*doginfo).owner);
 	free(doginfo);
 	return (NULL);
 }
 for (x = 0; x <= nl; x++)
 	(*doginfo).name[x] = name[x];
-
 (*doginfo).age = age;
 for (x = 0; x <= ol; x++)
 	(*doginfo).owner[x] = owner[x];
