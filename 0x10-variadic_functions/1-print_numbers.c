@@ -4,8 +4,8 @@
 
 /**
  * print_numbers - prints numbers followed by new line
- * @seperator: const char
- * @n:const unsigned int
+ * @separator:char
+ * @n:int
  * Return: void
  */
 
