@@ -1,6 +1,14 @@
 #ifndef VARIADIC_FUNCTIONS
 #define VARIADIC_FUNCTIONS
+#include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
+
+/**
+ *struct arg-structure
+ *@letter: char*
+ *@f: pointer to function
+ */
 
 typedef struct arg
 {
