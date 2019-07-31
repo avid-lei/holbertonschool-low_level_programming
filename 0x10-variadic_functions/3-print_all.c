@@ -43,7 +43,7 @@ void p_string(va_list str)
 	char *s;
 
 	s = va_arg(str, char *);
-	if (!s)
+	if (s == NULL)
 		s = "(nil)";
 	printf("%s", s);
 }
@@ -67,11 +67,12 @@ void print_all(const char * const format, ...)
 	va_list valist;
 	int i, j;
 	char *sep = "";
+
 	va_start(valist, format);
 
 	i = 0;
 
-	while (format[i] != '\0')
+	while (format && format[i])
 	{
 		j = 0;
 		while (j < 4)
