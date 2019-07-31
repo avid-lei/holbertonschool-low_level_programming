@@ -25,7 +25,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	while ((*head) || ((*head == NULL) && idx == 0))
 	{
-		if (count + 1 == idx)
+		if ((count + 1 == idx) || idx == 0)
 		{
 			temp = new->next;
 			new->next = node;
