@@ -15,8 +15,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int x;
 	char *s;
 
-	if (!separator)
-		return;
 
 	va_start(valist, n);
 
@@ -29,8 +27,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		else
 		{
 			printf("%s", s);
-			if ( x < n -1)
-			printf("%s", separator);
+			if (x < n -1 && !separator)
+				printf("%s", separator);
 		}
 	}
 
