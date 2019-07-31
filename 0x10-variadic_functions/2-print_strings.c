@@ -33,7 +33,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 			printf("%s", s);
 
-			if (x < n -1 && !separator)
+			if (x < n -1 && separator)
 				printf("%s", separator);
 
 	}
