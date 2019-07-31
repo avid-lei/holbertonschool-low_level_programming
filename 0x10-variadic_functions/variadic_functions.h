@@ -4,6 +4,12 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
+typedef struct arg{
+
+char *letter;
+void (*f)();
+
+}arg;
 
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);

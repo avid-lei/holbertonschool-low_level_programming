@@ -40,7 +40,11 @@ void p_float(va_list f)
 
 void p_string(va_list str)
 {
-	printf("%s", va_arg(str, char *));
+	char *s;
+	s = va_arg(str, char *);
+	if (!s)
+		s = "(nil)";
+	printf("%s", s);
 }
 /**
  *print_all - print everything
