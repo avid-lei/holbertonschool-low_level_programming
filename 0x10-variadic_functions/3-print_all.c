@@ -66,7 +66,7 @@ void print_all(const char * const format, ...)
 
 	va_list valist;
 	int i, j;
-
+	char *sep = "";
 	va_start(valist, format);
 
 	i = 0;
@@ -76,17 +76,14 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (j < 4)
 		{
-			if (format[i] == *check[j].letter && j != 3)
-			{
-				check[j].f(valist);
-				printf(", ");
-				break;
-			}
-
 			if (format[i] == *check[j].letter)
 			{
+				printf("%s", sep);
 				check[j].f(valist);
+				sep = ", ";
+
 			}
+
 			j++;
 		}
 		i++;
