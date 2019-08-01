@@ -9,30 +9,34 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-unsigned int count = 0;
-unsigned int icopy = n;
+	unsigned int count = 0;
+	unsigned int icopy = n;
+	unsigned int i;
 
-if (n == 0)
-	return (0);
+	if (n == 0)
+		return (0);
 
-while (icopy)
-{
-	count++;
-	icopy = icopy >> 1;
+	while (icopy)
+	{
+		count++;
+		icopy = icopy >> 1;
 
-}
-count--;
+	}
 
-if (index > count)
+
+	for (i = 0; i < count; i++)
+	{
+
+		if (i == index)
+		{
+			if (n & 1)
+				return (1);
+
+			else
+				return (0);
+		}
+		n = n >> 1;
+	}
 	return (-1);
-
-if ((n >> index) & 1)
-	return (1);
-
-else
-	return (0);
-
-
-
 
 }
