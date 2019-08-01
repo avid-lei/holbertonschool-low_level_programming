@@ -18,7 +18,7 @@ while (icopy)
 	icopy = icopy >> 1;
 
 }
-
+count--;
 if (index > count)
 	return (-1);
 
