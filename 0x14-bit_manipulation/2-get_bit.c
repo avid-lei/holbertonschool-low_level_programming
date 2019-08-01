@@ -9,7 +9,7 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-unsigned int count;
+unsigned int count = 0;
 unsigned int icopy = n;
 
 while (icopy)
@@ -19,6 +19,7 @@ while (icopy)
 
 }
 count--;
+
 if (index > count)
 	return (-1);
 
