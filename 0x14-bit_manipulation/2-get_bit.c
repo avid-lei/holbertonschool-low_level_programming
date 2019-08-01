@@ -11,7 +11,6 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int count = 0;
 	unsigned int icopy = n;
-	unsigned int i;
 
 	while (icopy)
 	{
@@ -20,20 +19,13 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	}
 
+	if (index >= count)
+		return (-1);
 
-	for (i = 0; i < count; i++)
-	{
+	if (n >> index & 1)
+		return (1);
 
-		if (i == index)
-		{
-			if (n & 1)
-				return (1);
-
-			else
-				return (0);
-		}
-		n = n >> 1;
-	}
-	return (-1);
+	else
+		return (0);
 
 }
