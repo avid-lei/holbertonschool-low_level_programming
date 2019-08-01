@@ -21,9 +21,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	ncopy = ncopy >> 1;
 	}
 
-	count--;
-
-	if (index > count)
+	if (index >= count)
 		return (-1);
 
 	mask = 1 << index;
