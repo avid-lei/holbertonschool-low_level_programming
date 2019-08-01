@@ -11,17 +11,8 @@ int clear_bit(unsigned long int *n, unsigned int index)
 {
 
 	unsigned long int mask;
-	unsigned int count = 0;
-	unsigned long int ncopy = *n;
 
-
-	while (ncopy)
-	{
-	count++;
-	ncopy = ncopy >> 1;
-	}
-
-	if (index >= count)
+	if (index >= (sizeof(unsigned long int) * 8))
 		return (-1);
 
 	mask = 1 << index;
