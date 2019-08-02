@@ -34,11 +34,9 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98); }
 		if (r != 0)
-		{
-			w = write(fd_to, buf, r);
+		{	w = write(fd_to, buf, r);
 			if (w == -1)
-			{
-				dprintf(STDERR_FILENO, "Error: Can't write to  %s\n", argv[2]);
+			{	dprintf(STDERR_FILENO, "Error: Can't write to  %s\n", argv[2]);
 				exit(99); }}}
 	cf = close(fd_from);
 	if (cf == -1)
