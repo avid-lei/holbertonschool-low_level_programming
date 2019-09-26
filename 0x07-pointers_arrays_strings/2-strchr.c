@@ -17,7 +17,7 @@ for (;; s++)
 		return ('\0');
 }
 
-return (s);
+return (0);
 
 }
 

@@ -9,19 +9,6 @@ int palcheck(char *s, int x, int i);
  *Return:int
  */
 
-int _strlen(char *s)
-{
-	if (*s)
-		return (1 + _strlen(s + 1));
-	return (0);
-}
-
-/**
- *is_palindrome - checks for a palidrome
- *@s:int
- * Return:int
- */
-
 int is_palindrome(char *s)
 {
 	int length;
@@ -34,6 +21,20 @@ int is_palindrome(char *s)
 	return (1);
 
 }
+
+/**
+ *_strlen-length of string
+ *@s:char
+ *Return:int
+ */
+
+int _strlen(char *s)
+{
+	if (*s)
+		return (1 + _strlen(s + 1));
+	return (0);
+}
+
 
 /**
  *palcheck - checks palindrome
