@@ -1,8 +1,9 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_print - print the hash table
- * @ht: the hash table
+ * hash_table_print - print hash table
+ * @ht: const hash_table_t
+ * Return: void
  */
 
 void hash_table_print(const hash_table_t *ht)
