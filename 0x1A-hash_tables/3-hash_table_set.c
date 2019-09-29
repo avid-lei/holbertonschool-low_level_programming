@@ -15,7 +15,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *temp;
 	unsigned long int i;
 
-
 	if (!key || strlen(key) == 0 || !ht)
 	{
 		return (0);
