@@ -22,20 +22,22 @@ void insertion_sort_list(listint_t **list)
 		if (two->n < one->n)
 		{
 			marker = one;
-			while (one && two->n < one->n)
+			while (two->n < one->n)
 			{
-				if (one->prev)
-					one->prev->next = two;
-
 				two->prev = one->prev;
 				one->next = two->next;
 				two->next = one;
 				one->prev = two;
 				if (one->next)
 					one->next->prev = one;
-				if (!two->prev)
+				if (two->prev)
+					two->prev->next = two;
+				else
+				{
 					*list = two;
-
+					print_list(*list);
+					break;
+				}
 				print_list(*list);
 				one = two->prev;
 			}
