@@ -12,6 +12,9 @@ void selection_sort(int *array, size_t size)
 	size_t cycle, pos;
 	int low, temp;
 
+	if (size < 2)
+		return;
+
 	for (cycle = 0; cycle < size - 1; cycle++)
 	{
 
