@@ -10,7 +10,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *one = *list;
 	listint_t *two = one->next;
-	listint_t *marker;
+	listint_t *marker = NULL;
 
 	if (!list || !(*list) || !(*list)->next)
 		return;
