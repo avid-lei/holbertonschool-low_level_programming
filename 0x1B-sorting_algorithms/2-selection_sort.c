@@ -23,6 +23,7 @@ void selection_sort(int *array, size_t size)
 			}
 
 		}
+
 		if (array[cycle] != array[low])
 		{
 			temp = array[cycle];
