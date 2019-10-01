@@ -70,12 +70,14 @@ void cocktail_sort_list(listint_t **list)
 	int cycle = 0;
 	int swaps = 1;
 
+	if (!list || !(*list))
+		return;
+
 	while (swaps != 0)
 	{
 		swaps = 0;
 		check = *list;
 		check = move(check, cycle, 1);
-
 		while (check->next)
 		{
 			if (check->n > check->next->n)
@@ -87,13 +89,11 @@ void cocktail_sort_list(listint_t **list)
 			}
 			check = check->next;
 		}
-
 		if (swaps == 0)
 			return;
 		swaps = 0;
 		check = *list;
 		check = move(check, cycle, -1);
-
 		while (check->prev)
 		{
 			if (check->n < check->prev->n)
