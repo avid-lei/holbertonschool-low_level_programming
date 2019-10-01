@@ -39,13 +39,9 @@ void insertion_sort_list(listint_t **list)
 				print_list(*list);
 				one = two->prev;
 			}
-			one = marker;
-			two = marker->next;
 		}
-		else
-		{
-			one = one->next;
-			two = two->next;
-		}
+		one = marker;
+		two = marker->next;
+
 	}
 }
