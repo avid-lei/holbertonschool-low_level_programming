@@ -14,7 +14,7 @@ void insertion_sort_list(listint_t **list)
 
 	if (!list || !*list)
 		return;
-	while (one && two)
+	while (two)
 	{
 		marker = two;
 		if (two->n < one->n)
@@ -44,8 +44,8 @@ void insertion_sort_list(listint_t **list)
 		}
 		else
 		{
-			one = marker;
-			two = marker->next;
+			one = one->next;
+			two = two->next;
 		}
 	}
 }
