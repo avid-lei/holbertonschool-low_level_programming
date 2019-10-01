@@ -12,7 +12,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *two = one->next;
 	listint_t *marker = *list;
 
-	if (!list || !(*list))
+	if (!list || !*list)
 		return;
 	while (one && two)
 	{
