@@ -15,7 +15,7 @@ void selection_sort(int *array, size_t size)
 	for (cycle = 0; cycle < size - 1; cycle++)
 	{
 
-		for (pos = cycle, low = pos; pos < size; pos++)
+		for (pos = cycle + 1, low = cycle; pos < size; pos++)
 		{
 			if (array[pos] < array[low])
 			{
