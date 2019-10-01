@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "sort.h"
 
 /**
@@ -12,6 +11,9 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t cycle, swap, temp;
 	int pass;
+
+	if (size < 2)
+		return;
 
 	for (cycle = 0; cycle < size - 1; cycle++)
 	{
