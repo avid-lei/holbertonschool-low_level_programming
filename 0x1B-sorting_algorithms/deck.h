@@ -1,8 +1,16 @@
-#ifndef SORT_H
-#define SORT_H
+#ifndef DECK_H
+#define DECK_H
 
 #include <stdio.h>
 #include <stdlib.h>
+
+/**
+ * enum kind_e - enumeration for kinds of cards
+ * @SPADE: 0
+ * @HEART: 1
+ * @CLUB: 2
+ * @DIAMOND: 3
+ */
 
 typedef enum kind_e
 {
