@@ -47,7 +47,7 @@ void swap(int *low, int *high)
 
 void counting_sort(int *array, size_t size)
 {
-	int *counter;
+	int *counter, *new;
 	size_t i, k;
 
 	if (!array || size < 2)
@@ -58,6 +58,7 @@ void counting_sort(int *array, size_t size)
 	counter = malloc((k + 1) * sizeof(int));
 	if (!counter)
 		return;
+	new = malloc(size * sizeof(int));
 
 	for (i = 0; i < k + 1; i++)
 		counter[i] = 0;
@@ -72,15 +73,14 @@ void counting_sort(int *array, size_t size)
 
 	for (i = 0; i < size; i++)
 	{
-		swap(&array[counter[array[i]] - 1], &array[i]);
+		new[counter[array[i]] - 1] = array[i];
+		counter[array[i]]--;
 	}
 
 	for (i = 0; i < size; i++)
 	{
-		swap(&array[counter[array[i]] - 1], &array[i]);
-		counter[array[i]]--;
+		array[i] = new[i];
 	}
-
-
+	free(new);
 	free(counter);
 }
