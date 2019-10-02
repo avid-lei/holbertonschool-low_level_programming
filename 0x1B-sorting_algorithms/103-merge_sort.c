@@ -3,6 +3,30 @@
 void split(int *array, int start, int end);
 int middle(int start, int end);
 void merge(int *array, int start, int m, int end);
+void print_array2(const int *array, size_t start, size_t end);
+
+/**
+ * print_array2 - Customized print_array
+ * @array: The array to be printed
+ * @start: starting index
+ * @end: ending index
+ * Return: always 0
+ */
+void print_array2(const int *array, size_t start, size_t end)
+{
+	size_t i;
+
+	i = start;
+	while (array && i <= end)
+	{
+		if (i > start)
+			printf(", ");
+		printf("%d", array[i]);
+		++i;
+	}
+	printf("\n");
+}
+
 
 /**
  * merge_sort - sorting via merge method
@@ -72,75 +96,63 @@ void merge(int *array, int start, int m, int end)
 {
 	int len_left = m - start + 1;
 	int len_right = end - m;
-	int l, r, i, k;
+	int l, r, i;
 
-	int *left = malloc(sizeof(int) * len_left);
-	int *right = malloc(sizeof(int) * len_right);
 	int *new = malloc(sizeof(int) * end - start + 1);
 
 	printf("Merging...\n");
 	printf("[left]: ");
 	for (l = start, i = 0; l <= m; l++, i++)
 	{
-		left[i] = array[l];
+		new[i] = array[l];
 	}
-	print_array(left, len_left);
+	print_array(new, len_left);
 
 	printf("[right]: ");
 
-	for (r = m + 1, i = 0; r <= end; r++, i++)
+	for (r = m + 1; r <= end; r++, i++)
 	{
-		right[i] = array[r];
+		new[i] = array[r];
 	}
 
-	print_array(right, len_right);
+	print_array2(new, len_left, i - 1);
 
 	l = 0;
-	r = 0;
+	r = len_left;
 	i = start;
-	k = 0;
 
-	while (l < len_left && r < len_right)
+	while (l < len_left && r < len_right + len_left)
 	{
-		if (left[l] <= right[r])
+		if (new[l] <= new[r])
 		{
-			array[i] = left[l];
-			new[k] = left[l];
+			array[i] = new[l];
 			l++;
 		}
 		else
 		{
-			array[i] = right[r];
-			new[k] = right[r];
+			array[i] = new[r];
 			r++;
 		}
 		i++;
-		k++;
 	}
 
 
 	while (l < len_left)
 	{
-		array[i] = left[l];
-		new[k] = left[l];
+		array[i] = new[l];
 		l++;
 		i++;
-		k++;
 	}
 
-	while (r < len_right)
+	while (r < len_right + len_left)
 	{
-		array[i] = right[r];
-		new[k] = right[r];
+		array[i] = new[r];
 		r++;
 		i++;
-		k++;
 	}
 
 	printf("[Done]: ");
-	print_array(new, end - start + 1);
+	print_array2(array, start, end);
 
-	free(left);
-	free(right);
 	free(new);
 }
