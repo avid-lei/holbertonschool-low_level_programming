@@ -48,13 +48,14 @@ void swap(int *low, int *high)
 void counting_sort(int *array, size_t size)
 {
 	int *counter;
-	size_t i, k = largest((array), size);
+	size_t i, k;
 
 	if (!array || size < 2)
 		return;
 
-	counter = malloc((k + 1) * sizeof(int));
+	k = largest((array), size);
 
+	counter = malloc((k + 1) * sizeof(int));
 	if (!counter)
 		return;
 
