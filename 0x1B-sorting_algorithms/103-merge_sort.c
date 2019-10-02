@@ -1,8 +1,8 @@
 #include "sort.h"
 
-void split(int *array, int start, int end);
+void split(int *array, int *new, int start, int end);
 int middle(int start, int end);
-void merge(int *array, int start, int m, int end);
+void merge(int *array, int *new, int start, int m, int end);
 void print_array2(const int *array, size_t start, size_t end);
 
 /**
@@ -37,9 +37,16 @@ void print_array2(const int *array, size_t start, size_t end)
 
 void merge_sort(int *array, size_t size)
 {
+	int *new;
+
 	if (size < 2 || !array)
 		return;
-	split(array, 0, size - 1);
+
+	new = malloc(sizeof(int) * size);
+
+	split(array, new, 0, size - 1);
+
+	free(new);
 }
 
 
@@ -62,22 +69,23 @@ int middle(int start, int end)
 /**
  * split- recursive function to split up array into single elements
  * @array: int*
+ * @new: int*
  * @start: int
  * @end: int
  * Return: always 0
  */
 
-void split(int *array, int start, int end)
+void split(int *array, int *new, int start, int end)
 {
 	int m;
 
 	if (start < end)
 	{
 		m = middle(start, end);
-		split(array, start, m);
-		split(array, m + 1, end);
+		split(array, new, start, m);
+		split(array, new, m + 1, end);
 
-		merge(array, start, m, end);
+		merge(array, new, start, m, end);
 	}
 
 
@@ -86,19 +94,19 @@ void split(int *array, int start, int end)
 /**
  * merge- merger function
  * @array: int*
+ * @new: int*
  * @start: int
  * @m: int
  * @end: int
  * Return: always 0
  */
 
-void merge(int *array, int start, int m, int end)
+void merge(int *array, int *new, int start, int m, int end)
 {
 	int len_left = m - start + 1;
 	int len_right = end - m;
 	int l, r, i;
 
-	int *new = malloc(sizeof(int) * end - start + 1);
 
 	printf("Merging...\n");
 	printf("[left]: ");
@@ -154,5 +162,4 @@ void merge(int *array, int start, int m, int end)
 	printf("[Done]: ");
 	print_array2(array, start, end);
 
-	free(new);
 }
