@@ -13,6 +13,9 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	binary_tree_t *f_parent = (binary_tree_t *)first;
 	binary_tree_t *s_parent = (binary_tree_t *)second;
 
+	if (!first || !second)
+		return (NULL);
+
 	while (f_parent->parent)
 		f_parent = f_parent->parent;
 
@@ -40,14 +43,14 @@ binary_tree_t *re_lca(binary_tree_t *first, binary_tree_t *second,
 {
 	binary_tree_t *f, *s;
 
-	if (!root)
+	if (!root || !first || !second)
 		return (NULL);
 
 	if (root == first)
-		return (first);
+		return (root);
 
 	if (root == second)
-		return (second);
+		return (root);
 
 	f = re_lca(first, second, root->left);
 
