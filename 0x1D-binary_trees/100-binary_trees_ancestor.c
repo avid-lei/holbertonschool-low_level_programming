@@ -47,10 +47,10 @@ binary_tree_t *re_lca(binary_tree_t *first, binary_tree_t *second,
 		return (NULL);
 
 	if (root == first)
-		return (root);
+		return (first);
 
 	if (root == second)
-		return (root);
+		return (second);
 
 	f = re_lca(first, second, root->left);
 
