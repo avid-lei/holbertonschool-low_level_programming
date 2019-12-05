@@ -43,7 +43,7 @@ binary_tree_t *re_lca(binary_tree_t *first, binary_tree_t *second,
 {
 	binary_tree_t *f, *s;
 
-	if (!root || !first || !second)
+	if (!root)
 		return (NULL);
 
 	if (root == first)
