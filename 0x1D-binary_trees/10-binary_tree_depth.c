@@ -1,14 +1,21 @@
 #include "binary_trees.h"
 
+/**
+ * binary_tree_depth - calculate depth
+ * @tree: binary_tree_t
+ * Return: size_t
+ */
+
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
-    if (!tree || !tree->parent)
-        return (0);
 
-    else
-    {
-        return (1 + binary_tree_depth(tree->parent));
-    }
+	if (!tree || !tree->parent)
+		return (0);
+
+	else
+	{
+		return (1 + binary_tree_depth(tree->parent));
+	}
 
 
 }
