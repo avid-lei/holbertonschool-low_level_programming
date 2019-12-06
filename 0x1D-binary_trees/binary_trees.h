@@ -30,7 +30,7 @@ typedef struct binary_tree_s heap_t;
 void binary_tree_print(const binary_tree_t *);
 
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
-void re_node(binary_tree_t *t, binary_tree_t *node);
+bst_t *re_node(binary_tree_t **t, binary_tree_t *node);
 
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 void re_left(binary_tree_t *t, binary_tree_t *node);
@@ -75,6 +75,10 @@ binary_tree_t *re_lca(binary_tree_t *first, binary_tree_t *second, binary_tree_t
 
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 int binary_tree_is_complete(const binary_tree_t *tree);
+int re_complete(const binary_tree_t *tree, int i, int height);
+
+int re_levelheight(const binary_tree_t *tree);
+
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 int binary_tree_is_bst(const binary_tree_t *tree);
