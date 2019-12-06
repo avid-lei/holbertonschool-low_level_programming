@@ -1,11 +1,12 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_insert_left - insert left node
+ * binary_tree_insert_left - insert a node as the left child of another node
  * @parent: binary_tree_t
- * @value: int
+ * @value: data int
  * Return: binary_tree_t
  */
+
 
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 {
@@ -18,41 +19,22 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	if (!parent)
 		return (NULL);
 
-	temp = parent;
 
 	node->n = value;
 	node->right = NULL;
+	node->parent = parent;
 
-	re_left(temp, node);
-	return (node);
-
-}
-
-/**
- * re_left - recursive solution
- * @t: binary_tree_t
- * @node: binary_tree_t
- * Return: Always 0
- */
-
-void re_left(binary_tree_t *t, binary_tree_t *node)
-{
-	if (!(t->left))
+	if (!parent->left)
 	{
-		node->parent = t;
+		parent->left = node;
 		node->left = NULL;
-		t->left = node;
-		return;
-	}
-	else if (t->left->n < node->n)
-	{
-		node->parent = t;
-		node->left = t->left;
-		t->left->parent = node;
-		t->left = node;
-		return;
 	}
 	else
-		re_left(t->left, node);
-
+	{
+		temp = parent->left;
+		parent->left = node;
+		temp->parent = node;
+		node->left = temp;
+	}
+	return (node);
 }
