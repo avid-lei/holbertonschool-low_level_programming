@@ -1,6 +1,26 @@
 #include "binary_trees.h"
 
 
+int re_levelheight(const binary_tree_t *tree)
+{
+	int r_height, l_height;
+
+	if (!tree)
+		return (0);
+
+	r_height = 1 + re_levelheight(tree->right);
+	l_height = 1 + re_levelheight(tree->left);
+
+	if (r_height >= l_height)
+		return (r_height);
+	else
+		return (l_height);
+
+}
+
+
+
+
 int re_complete(const binary_tree_t *tree, int i, int flag);
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
