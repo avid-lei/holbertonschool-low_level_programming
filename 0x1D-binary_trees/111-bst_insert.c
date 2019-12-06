@@ -9,13 +9,21 @@
  */
 bst_t *re_node(bst_t **parent, bst_t *node)
 {
+
 	if (node->n == (*parent)->n)
+	{
 		return (NULL);
+	}
+
 
 	if (node->n < (*parent)->n)
 	{
+
 		if ((*parent)->left)
-			re_node(&((*parent)->left), node);
+		{
+			if (!re_node(&((*parent)->left), node))
+				return (NULL);
+		}
 		else
 		{
 			(*parent)->left = node;
@@ -25,8 +33,12 @@ bst_t *re_node(bst_t **parent, bst_t *node)
 	}
 	else
 	{
+
 		if ((*parent)->right)
-			re_node(&((*parent)->right), node);
+		{
+			if (!re_node(&((*parent)->right), node))
+				return (NULL);
+		}
 		else
 		{
 			(*parent)->right = node;
@@ -34,6 +46,7 @@ bst_t *re_node(bst_t **parent, bst_t *node)
 			return (node);
 		}
 	}
+
 	return (node);
 }
 
@@ -48,7 +61,7 @@ bst_t *re_node(bst_t **parent, bst_t *node)
 
 bst_t *bst_insert(bst_t **tree, int value)
 {
-	bst_t *node = malloc(sizeof(binary_tree_t));
+	bst_t *node = malloc(sizeof(bst_t));
 
 	if (!node)
 		return (NULL);
@@ -65,8 +78,10 @@ bst_t *bst_insert(bst_t **tree, int value)
 	}
 
 	if (!re_node(tree, node))
+	{
+		free(node);
 		return (NULL);
-
+	}
 	return (node);
 
 }
