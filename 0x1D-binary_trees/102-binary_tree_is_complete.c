@@ -1,5 +1,10 @@
 #include "binary_trees.h"
 
+/**
+ * re_levelheight - find height of tree
+ * @tree: binary_tree_t
+ * Return: int
+ */
 
 int re_levelheight(const binary_tree_t *tree)
 {
@@ -18,10 +23,63 @@ int re_levelheight(const binary_tree_t *tree)
 
 }
 
+/**
+ * re_complete - recursive function to find completeness by height and flag
+ * @tree: binary_tree_t
+ * @i: int
+ * @flag: int
+ * Return: int
+ */
 
+int re_complete(const binary_tree_t *tree, int i, int flag)
+{
+	int r, l;
 
+	if (!tree)
+		return (1);
+	if (i == 1 && flag == 0)
+	{
+		if (!tree->left || !tree->right)
+			return (0);
 
-int re_complete(const binary_tree_t *tree, int i, int flag);
+		return (1);
+	}
+	if (flag == 2 && i == 1)
+	{
+		if ((tree->right || tree->left))
+			return (0);
+
+		return (2);
+	}
+	if (i == 1 && flag == 1)
+	{
+		if (!tree->right)
+		{
+			flag = 2;
+			return (2);
+		}
+		if (tree->right && !tree->left)
+			return (0);
+	}
+	l = re_complete(tree->left, i - 1, flag);
+	if (l == 0)
+		return (0);
+	if (l == 2)
+		flag = 2;
+	r = re_complete(tree->right, i - 1, flag);
+	if (r == 0)
+		return (0);
+	if (r == 2)
+		return (2);
+	return (1);
+}
+
+/**
+ * binary_tree_is_complete - find if tree is complete
+ * @tree: binary_tree_t
+ * Return: int
+ */
+
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
 	int i, j, flag = 0;
@@ -46,69 +104,3 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	return (1);
 }
 
-
-int re_complete(const binary_tree_t *tree, int i, int flag)
-{
-	int r, l;
-
-	if (!tree)
-		return (1);
-
-	if (i == 1 && flag == 0)
-	{
-		if (!tree->left || !tree->right)
-		{
-			return (0);
-		}
-
-		return (1);
-	}
-
-
-    if (flag == 2 && i == 1)
-    {
-
-        if ((tree->right || tree->left))
-            return (0);
-        else
-        {
-             return (2);
-        }
-    }
-
-	if (i == 1 && flag == 1)
-	{
-
-        if (!tree->right)
-         {
-            flag = 2;
-            return (2);
-         }
-
-		if (tree->right && !tree->left)
-			return (0);
-
-	}
-
-
-	l = re_complete(tree->left, i - 1, flag);
-
-    if (l == 0)
-        return (0);
-
-    if (l == 2)
-    {
-        flag = 2;
-
-    }
-
-	r = re_complete(tree->right, i - 1, flag);
-    if (r == 0)
-        return (0);
-
-    if (r == 2)
-        return (2);
-
-
-		return (1);
-}
