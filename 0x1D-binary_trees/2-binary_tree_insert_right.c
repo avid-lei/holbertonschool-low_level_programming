@@ -1,55 +1,40 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_insert_right - insert right node
+ * binary_tree_insert_right - insert a node as the left child of another node
  * @parent: binary_tree_t
- * @value: int
+ * @value: data int
  * Return: binary_tree_t
  */
+
 
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
 	binary_tree_t *node = malloc(sizeof(binary_tree_t));
-	binary_tree_t *temp = parent;
 
 	if (!node)
 		return (NULL);
 
 	if (!parent)
+	{
+		free(node);
 		return (NULL);
+	}
 
+	node->parent = parent;
 	node->n = value;
 	node->left = NULL;
 
-	re_right(temp, node);
-	return (node);
-
-}
-
-/**
- * re_right - recursive solution
- * @t: binary_tree_t
- * @node: binary_tree_t
- * Return: Always 0
- */
-
-void re_right(binary_tree_t *t, binary_tree_t *node)
-{
-	if (!(t->right))
+	if (!parent->right)
 	{
-		node->parent = t;
 		node->right = NULL;
-		t->right = node;
-		return;
-	}
-	else if (t->right->n > node->n)
-	{
-		node->parent = t;
-		node->right = t->right;
-		t->right->parent = node;
-		t->right = node;
-		return;
+		parent->right = node;
 	}
 	else
-		re_right(t->right, node);
+	{
+		parent->right->parent = node;
+		node->right = parent->right;
+		parent->right = node;
+	}
+	return (node);
 }
