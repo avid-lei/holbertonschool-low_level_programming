@@ -65,25 +65,43 @@ int re_complete(const binary_tree_t *tree, int i, int flag)
 	}
 
 
+    if (flag == 2)
+    {
+        if ((tree->right || tree->left) && i == 1)
+            return (0);
+        else
+            return (2);
+    }
 	if (i == 1 && flag == 1)
 	{
+
+        if (!tree->right)
+         {
+            return (2);
+         }
+
 		if (tree->right && !tree->left)
 			return (0);
 
-		return (1);
 	}
 
 
 	l = re_complete(tree->left, i - 1, flag);
 
-	if (l == 0)
-		return (0);
+    if (l == 0)
+        return (0);
+
+    if (l == 2)
+        flag = 2;
+
 
 	r = re_complete(tree->right, i - 1, flag);
+    if (r == 0)
+        return (0);
 
-	if (r == 0)
-		return (0);
+    if (r == 2)
+        flag = 2;
 
-	else
+
 		return (1);
 }
