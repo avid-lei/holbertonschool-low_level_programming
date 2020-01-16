@@ -33,10 +33,10 @@ int binary_help(int *array, int start, int end, int value)
 {
 	int mid, x;
 
-	printf("Searching in array: ");
+	printf("Searching in array:");
 
 	for (x = start; x <= end; x++)
-		printf("%d ", array[x]);
+		printf(" %d", array[x]);
 
 	printf("\n");
 
