@@ -19,8 +19,15 @@ int interpolation_search(int *array, size_t size, int value)
 		return (-1);
 
 
-	while (high != low)
+	while (low <= high)
 	{
+		if (low == high)
+		{
+			if (array[low] == value)
+				return (low);
+			else
+				return (-1);
+		}
 		pos = low + (((double)(high - low) /
 					(array[high] - array[low])) * (value - array[low]));
 
@@ -31,17 +38,14 @@ int interpolation_search(int *array, size_t size, int value)
 		}
 		else
 			printf("Value checked array[%lu] = [%d]\n", pos, array[pos]);
-
 		if (array[pos] == value)
 			return (pos);
 
 		if (value < array[pos])
-			high = pos;
-
+			high = pos - 1;
 		else
-			low = pos;
+			low = pos + 1;
 
 	}
-
 	return (-1);
 }
