@@ -36,7 +36,10 @@ int binary_help(int *array, int start, int end, int value)
 	printf("Searching in array:");
 
 	for (x = start; x <= end; x++)
-		printf(" %d", array[x]);
+		if (x == start)
+			printf(" %d", array[x]);
+		else
+			printf(", %d", array[x]);
 
 	printf("\n");
 
